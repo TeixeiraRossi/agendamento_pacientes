@@ -2,7 +2,7 @@ package org.example.annotation;
 
 import java.lang.reflect.Field;
 
-public @interface Validador {
+public class Validador {
     public static void validar(Object objeto) {
         Class<?> classe = objeto.getClass();
 
