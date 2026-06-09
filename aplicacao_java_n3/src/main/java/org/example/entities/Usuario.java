@@ -1,11 +1,19 @@
 package org.example.entities;
 
+import org.example.annotation.Obrigatorio;
+
 import java.util.UUID;
 
 public class Usuario {
     private UUID id;
+
+    @Obrigatorio(mensagem = "O nome é obrigatorio")
     private String nome;
+
+    @Obrigatorio(mensagem = "O email é obrigatorio")
     private String email;
+
+    @Obrigatorio(mensagem = "A senha é obrigatoria")
     private String senha;
 
     public Usuario(){

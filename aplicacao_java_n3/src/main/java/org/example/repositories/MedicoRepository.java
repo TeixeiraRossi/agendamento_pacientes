@@ -7,7 +7,7 @@ import java.util.List;
 public interface MedicoRepository {
     void salvar(Medico medico);
     Medico atualizar(Medico medico);
-    Medico buscarPorCpf(String id);
+    Medico buscarPorCpf(String cpf);
     List<Medico> buscarTodos();
-    Medico excluir(String id);
+    boolean excluir(String id);
 }

@@ -52,4 +52,19 @@ public class Conexao {
             instancia = new Conexao();
         return instancia;
     }
+    public int executeUpdate(String sql) {
+        try {
+            return createStatement().executeUpdate(sql);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public int executeUpdate(PreparedStatement statement) {
+        try {
+            return statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
