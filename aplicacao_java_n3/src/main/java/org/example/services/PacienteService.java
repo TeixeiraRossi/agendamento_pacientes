@@ -32,7 +32,7 @@ public class PacienteService {
         return paciente;
     }
     public Paciente atualizar(PacienteDto dto, String id){
-        Paciente paciente = new Paciente(UUID.randomUUID(), dto.getNome(), dto.getSexo(), dto.getCpf(), dto.getDataNascimento(), dto.getTelefone());
+        Paciente paciente = new Paciente(UUID.fromString(id), dto.getNome(), dto.getSexo(), dto.getCpf(), dto.getDataNascimento(), dto.getTelefone());
         Validador.validar(paciente);
         return repository.atualizar(paciente);
     }

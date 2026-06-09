@@ -9,9 +9,10 @@ import org.example.entities.Paciente;
 import org.example.repositories.AgendamentoRepository;
 import org.example.repositories.MedicoRepository;
 import org.example.repositories.PacienteRepository;
-import org.example.services.AgendamentoService;
-import org.example.services.MedicoService;
-import org.example.services.PacienteService;
+import org.example.repositories.UsuarioRepository;
+import org.example.services.*;
+
+import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -21,11 +22,19 @@ public class Main {
         PacienteRepository pacienteRepository = new PacienteRepositoryJBDC(Conexao.getInstancia());
         MedicoRepository medicoRepository = new MedicoRepositoryJBDC(Conexao.getInstancia());
         AgendamentoRepository agendamentoRepository = new AgendamentoRepositoryJBDC(Conexao.getInstancia());
+        UsuarioRepository usuarioRepository = new UsuarioRepositoryJBDC(Conexao.getInstancia());
+
 
         PacienteService pacienteService = new PacienteService(pacienteRepository);
         MedicoService medicoService = new MedicoService(medicoRepository);
         AgendamentoService agendamentoService = new AgendamentoService(agendamentoRepository);
+        UsuarioService usuarioService = new UsuarioService(usuarioRepository);
+        Scanner scanner = new Scanner(System.in);
 
+        Menu menu = new Menu(medicoService, pacienteService, agendamentoService, usuarioService, scanner);
+
+        menu.login();
+        /*
         Paciente paciente = pacienteService.salvar(
                 new PacienteDto(
                         "Guilherme FDS",
@@ -59,5 +68,7 @@ public class Main {
 
         System.out.println("AGENDAMENTOS");
         agendamentoService.buscarTodos().forEach(a -> System.out.println(a.getId()+ " | "+a.getData()+ " "+ a.getHora()));
+
+         */
     }
 }
