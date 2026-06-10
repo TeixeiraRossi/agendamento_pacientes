@@ -84,11 +84,11 @@ public class Menu {
                     System.out.print("Digite o sexo do paciente(0 = Masculino, 1 = Feminino): ");
                     sexo = scanner.nextInt();
                     System.out.print("Digite o CPF do paciente: ");
-                    cpf = scanner.nextLine();
+                    cpf = scanner.next();
                     System.out.print("Digite a data de nascimento (ex: DD/MM/AAAA): ");
-                    dataNascimento = scanner.nextLine();
+                    dataNascimento = scanner.next();
                     System.out.print("Digite o telefone do paciente: ");
-                    telefone = scanner.nextLine();
+                    telefone = scanner.next();
 
                     // Alterado de criar() para salvar(), passando todos os atributos do DTO
                     pacienteService.salvar(new PacienteDto(nome, sexo, cpf, dataNascimento, telefone));
@@ -444,10 +444,10 @@ public class Menu {
         do{
             System.out.println("" +
                     "--------Menu--------\n" +
-                    "1 - Agendamentos" +
+                    "1 - Agendamentos\n" +
                     "2 - Opcoes Pacientes\n" +
                     "3 - Opcoes Medicos\n" +
-                    "4 - Opcoes Usuario" +
+                    "4 - Opcoes Usuario\n" +
                     "5 - Sair");
             opc = scanner.nextInt();
 

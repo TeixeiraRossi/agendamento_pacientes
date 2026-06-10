@@ -23,8 +23,8 @@ public class PacienteRepositoryJBDC implements PacienteRepository {
             statement.setString(1, String.valueOf(paciente.getId()));
             statement.setString(2, paciente.getNome());
             statement.setInt(3, paciente.getSexo());
-            statement.setString(4, paciente.getDataNascimento());
-            statement.setString(5, paciente.getCpf());
+            statement.setString(4, paciente.getCpf());
+            statement.setString(5, paciente.getDataNascimento());
             statement.setString(6, paciente.getTelefone());
             statement.execute();
         }catch(Exception ex){
